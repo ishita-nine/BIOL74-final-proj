@@ -93,6 +93,11 @@ class BallAndStick(Cell):
         #     self.ais_prox.connect(self.dend[0],acd_connect_x)
         else:
             raise AssertionError('ais_mode should be \'soma\' or \'dend\'')
+        # creating lists of four regions
+        self.apic_main_list = [self.apic[0]]
+        self.apic_tuft_list = [self.apic[1], self.apic[2]] 
+        self.basal_list = [self.dend[0],  self.dend[1]] 
+        self.soma_list = [self.soma] 
         
 
     def _setup_biophysics(self):
