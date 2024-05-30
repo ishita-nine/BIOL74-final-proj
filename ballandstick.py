@@ -164,6 +164,7 @@ class BallAndStick(Cell):
     def _setup_recordings(self):
         self.t = h.Vector().record(h._ref_t)  # Record time
         self._spike_detector = h.NetCon(self.soma(0.5)._ref_v, None, sec=self.soma) # monitor V in soma for spiking
+        self._spike_detector.threshold = 0
         self.spike_times = h.Vector() 
         self._spike_detector.record(self.spike_times) # Record spike times to spike_times Vector        
         self.soma_v = h.Vector().record(self.soma(0.5)._ref_v) # Record somatic voltage        
