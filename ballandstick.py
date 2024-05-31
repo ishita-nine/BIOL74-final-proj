@@ -85,7 +85,7 @@ class BallAndStick(Cell):
         self.axon = h.Section(name="axon",cell=self)        
         self.axon.connect(self.ais_dist)
         self.axon.diam = 1
-        self.axon.L = 500
+        self.axon.L = 250
         self.axon.nseg = 1 + 2*int(self.axon.L/40) # 1 segments per 40 µm 
         if ais_mode == 'soma': # connect to soma
             self.ais_prox.connect(self.soma)
